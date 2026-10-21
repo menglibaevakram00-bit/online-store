@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <meta name="description" content="Ноутбуки для работы, учёбы и творчества в интернет-магазине MASTER-NOSIROV.">
+    <title>MASTER-NOSIROV — ноутбуки для ваших задач</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">Перейти к каталогу</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#" aria-label="MASTER-NOSIROV — на главную">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span>MASTER<span class="brand-divider">—</span>NOSIROV</span>
+        </a>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <a href="#catalog">Каталог</a>
+          <a href="#benefits">Преимущества</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <button class="cart-open" id="cart-open" type="button" aria-label="Открыть корзину">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6M10 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+          <span>Корзина</span><span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> ТЕХНОЛОГИИ ДЛЯ ВАШЕГО РИТМА</p>
+          <h1>Найдите ноутбук,<br>который <span>подходит вам.</span></h1>
+          <p class="hero-description">Для больших идей, ежедневных задач и всего, что между ними. Выбирайте с уверенностью.</p>
+          <a class="button button-light" href="#catalog">Выбрать ноутбук <span aria-hidden="true">↗</span></a>
+          <div class="hero-note"><span class="note-line"></span><span>Подборка проверенной техники<br>с официальной гарантией</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="hero-laptop">
+            <div class="hero-screen"><span class="screen-glow"></span><span class="screen-caption">CREATE<br>WITHOUT<br>LIMITS.</span></div>
+            <div class="hero-base"></div>
+          </div>
+          <div class="hero-chip chip-top">01 / 25</div><div class="hero-chip chip-bottom">MADE FOR MORE</div>
+        </div>
+        <div class="hero-index" aria-hidden="true">M / 01</div>
+      </section>
+
+      <section class="catalog-section" id="catalog">
+        <div class="section-heading">
+          <div><p class="eyebrow muted">ВАШ СЛЕДУЮЩИЙ ШАГ</p><h2>Каталог ноутбуков<span class="heading-period">.</span></h2></div>
+          <p class="catalog-intro">Техника, на которую можно положиться.<br>Подберите идеальный вариант.</p>
+        </div>
+        <div class="catalog-toolbar">
+          <div class="search-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            <label class="visually-hidden" for="search">Поиск ноутбука</label>
+            <input id="search" type="search" placeholder="Поиск по названию или модели">
+          </div>
+          <div class="toolbar-controls">
+            <label class="visually-hidden" for="category-filter">Категория</label>
+            <select id="category-filter"><option value="">Все категории</option></select>
+            <label class="visually-hidden" for="sort-filter">Сортировка</label>
+            <select id="sort-filter">
+              <option value="featured">Сначала популярные</option>
+              <option value="price_asc">Сначала дешевле</option>
+              <option value="price_desc">Сначала дороже</option>
+              <option value="name_asc">По названию</option>
+            </select>
+          </div>
+        </div>
+        <div class="price-filter">
+          <span>Цена, сум</span>
+          <label class="visually-hidden" for="min-price">Минимальная цена</label>
+          <input id="min-price" type="number" min="0" placeholder="От">
+          <span class="price-dash" aria-hidden="true">—</span>
+          <label class="visually-hidden" for="max-price">Максимальная цена</label>
+          <input id="max-price" type="number" min="0" placeholder="До">
+          <button class="text-button" id="reset-filters" type="button">Сбросить фильтры</button>
+        </div>
+        <div class="results-line"><p id="results-count" aria-live="polite">Загружаем каталог…</p><span class="results-rule"></span><span class="results-tag">MASTER SELECTION</span></div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>Ничего не нашлось</h3><p>Попробуйте изменить запрос или сбросить фильтры.</p></div>
+        <p class="api-error" id="catalog-error" role="alert" hidden>Не удалось загрузить каталог. Проверьте подключение и попробуйте обновить страницу.</p>
+      </section>
+
+      <section class="benefits-section" id="benefits">
+        <div class="benefits-heading"><p class="eyebrow">ПОКУПКА БЕЗ ЛИШНИХ СОМНЕНИЙ</p><h2>Важна каждая<br><span>деталь.</span></h2></div>
+        <div class="benefit-list">
+          <article class="benefit"><span class="benefit-number">01</span><div><h3>Только проверенные модели</h3><p>Мы внимательно отбираем технику для каталога — никаких случайных вариантов.</p></div><span class="benefit-arrow" aria-hidden="true">↗</span></article>
+          <article class="benefit"><span class="benefit-number">02</span><div><h3>Гарантия и прозрачность</h3><p>Понятные характеристики, актуальные цены и гарантия на каждый ноутбук.</p></div><span class="benefit-arrow" aria-hidden="true">↗</span></article>
+          <article class="benefit"><span class="benefit-number">03</span><div><h3>Помощь с выбором</h3><p>Подскажем, какая конфигурация подойдёт именно для ваших повседневных задач.</p></div><span class="benefit-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </section>
+      <section class="contact-strip" id="contacts"><div><p class="eyebrow muted">ОСТАЛИСЬ ВОПРОСЫ?</p><h2>Давайте подберём<br>ваш ноутбук.</h2></div><a class="button button-dark" href="mailto:hello@master-nosirov.uz">Связаться с нами <span aria-hidden="true">↗</span></a></section>
+    </main>
+
+    <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">M</span><span>MASTER<span class="brand-divider">—</span>NOSIROV</span></a><p>Техника для ваших идей.</p><span>© <span id="year"></span> MASTER-NOSIROV</span></footer>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Закрыть окно">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-panel-heading"><div><p class="eyebrow muted">ВАШ ВЫБОР</p><h2 id="cart-title">Корзина<span class="heading-period">.</span></h2></div><button class="dialog-close cart-close" type="button" aria-label="Закрыть корзину">×</button></div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-empty" id="cart-empty"><p>Корзина пока пуста.</p><button class="text-button" id="continue-shopping" type="button">Перейти к каталогу ↗</button></div>
+      <div class="cart-summary" id="cart-summary">
+        <div class="summary-row"><span>Товаров</span><span id="summary-quantity">0</span></div>
+        <div class="summary-row total-row"><span>Итого</span><strong id="cart-total">0 сум</strong></div>
+        <form id="checkout-form" class="checkout-form">
+          <h3>Оформление заказа</h3>
+          <label for="customer-name">Ваше имя</label><input id="customer-name" name="name" autocomplete="name" minlength="2" maxlength="100" required>
+          <label for="customer-phone">Номер телефона</label><input id="customer-phone" name="phone" type="tel" autocomplete="tel" pattern="[+0-9() -]{9,20}" placeholder="+998 90 123 45 67" required>
+          <label for="customer-email">Электронная почта <span>(необязательно)</span></label><input id="customer-email" name="email" type="email" autocomplete="email" maxlength="254">
+          <button class="button button-dark checkout-button" type="submit">Оформить заказ <span aria-hidden="true">↗</span></button>
+          <p class="checkout-status" id="checkout-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="38" x2="716" y2="595" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f1f3ec"/><stop offset="1" stop-color="#dfe5d4"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="292" y1="157" x2="523" y2="368" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#33445b"/><stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="base" x1="185" y1="407" x2="620" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#89919a"/><stop offset=".5" stop-color="#e0e3e1"/><stop offset="1" stop-color="#767f88"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v600H0z"/>
+  <circle cx="617" cy="129" r="107" fill="#d5f36a" fill-opacity=".38"/>
+  <rect x="229" y="134" width="348" height="259" rx="15" fill="#59616b"/>
+  <rect x="241" y="146" width="324" height="235" rx="8" fill="url(#screen)"/>
+  <path fill="#d5f36a" fill-opacity=".84" d="M423 146h142v235H371l52-235Z" opacity=".14"/>
+  <path fill="#89939d" d="m159 400 641 0-74 39H86l73-39Z"/>
+  <path fill="url(#base)" d="M159 393h641l-49 44H98l61-44Z"/>
+  <path fill="#b7bdc0" d="M342 398h188l-16 15H357l-15-15Z"/>
+  <text x="400" y="522" fill="#7d8583" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" text-anchor="middle">MASTER-NOSIROV</text>
+</svg>
